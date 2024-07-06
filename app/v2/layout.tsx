@@ -13,11 +13,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-row gap-2 bg-dark-100">
-        <main className="w-full bg-dark-100 h-dvh overflow-y-auto no-scrollbar py-2 pl-2">
-          {children}
+      <body>
+        <main className="flex flex-row gap-2 bg-dark-100">
+          <div className="w-full bg-dark-100 h-dvh overflow-y-auto no-scrollbar py-2 pl-2">
+            {children}
+          </div>
+          <Sidebar />
         </main>
-        <Sidebar />
       </body>
     </html>
   );

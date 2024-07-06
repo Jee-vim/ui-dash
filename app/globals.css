@@ -32,9 +32,8 @@
 
 @layer base {
   body {
-    @apply bg-dark-200 text-light-200 font-mono;
+    @apply text-light bg-dark-100;
   }
-
   button {
     @apply outline-none focus:outline-none;
   }

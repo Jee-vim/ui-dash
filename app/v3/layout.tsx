@@ -14,14 +14,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="!flex !flex-row gap-2 bg-dark-100">
-        <Sidebar />
-        <div className="w-full pr-2">
-          <Navbar />
-          <main className="w-full bg-dark-100 h-[calc(100vh-82px)] overflow-y-auto no-scrollbar py-2">
-            {children}
-          </main>
-        </div>
+      <body>
+        <main className="flex flex-row gap-2 bg-dark-100">
+          <Sidebar />
+          <div className="w-full pr-2">
+            <Navbar />
+            <main className="w-full bg-dark-100 h-[calc(100vh-82px)] overflow-y-auto no-scrollbar py-2">
+              {children}
+            </main>
+          </div>
+        </main>
       </body>
     </html>
   );

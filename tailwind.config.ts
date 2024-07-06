@@ -8,18 +8,7 @@ const config = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
-  prefix: "",
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
-    backgroundSize: {
-      "scroll-reveal": "0% 100%",
-    },
     fontFamily: {
       mono: ["var(--font-mono)", "monospace"],
       inter: ["var(--font-inter)", "sans-serif"],
