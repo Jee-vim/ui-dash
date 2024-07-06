@@ -1,4 +1,5 @@
-import Sidebar from "@/components/v1/sidebar";
+import Navbar from "@/components/v2/navbar";
+import Sidebar from "@/components/v2/sidebar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,11 +15,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="flex flex-row gap-2 bg-dark-100">
-          <div className="w-full bg-dark-100 h-dvh overflow-y-auto no-scrollbar py-2 pl-2">
-            {children}
-          </div>
+        <main className="main-wrapper">
           <Sidebar />
+          <div className="w-full">
+            <Navbar />
+            <div className="main-content-with-navbar">{children}</div>
+          </div>
         </main>
       </body>
     </html>

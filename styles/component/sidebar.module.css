@@ -1,0 +1,7 @@
+.sidebarWithOpenClose {
+  @apply min-w-[280px] relative h-dvh transition-all bg-dark-500 p-3 max-md:absolute;
+}
+
+.sidebarWithOpenCloseActive {
+  @apply !min-w-0 !w-0 !p-0 invisible -translate-x-full;
+}

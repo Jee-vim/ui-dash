@@ -34,6 +34,7 @@
   body {
     @apply text-light bg-dark-100;
   }
+
   button {
     @apply outline-none focus:outline-none;
   }
@@ -42,5 +43,25 @@
 @layer utilities {
   .btn-global {
     @apply transition-colors flex items-center justify-center gap-2 font-medium duration-200 min-h-[38px] sm:h-9 rounded-lg py-1 px-4 md:px-5 text-sm;
+  }
+
+  .main-wrapper {
+    @apply flex flex-row gap-2 bg-dark-100;
+  }
+
+  .main-content {
+    @apply w-full bg-dark-100 h-dvh overflow-y-auto no-scrollbar py-2;
+  }
+
+  .main-navbar {
+    @apply min-h-[75px] min-w-full bg-dark-500 p-3 flex items-center justify-between;
+  }
+
+  .main-content-with-navbar {
+    @apply w-full bg-dark-100 h-[calc(100vh-75px)] overflow-y-auto no-scrollbar py-2;
+  }
+
+  .main-content {
+    @apply w-full bg-dark-100 h-dvh overflow-y-auto no-scrollbar py-2;
   }
 }

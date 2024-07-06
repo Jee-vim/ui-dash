@@ -14,9 +14,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="flex flex-row gap-2 bg-dark-100">
+        <main className="main-wrapper">
           <Sidebar />
-          <main className="w-full bg-dark-100 h-dvh overflow-y-auto no-scrollbar py-2 pr-2">
+          <main className="main-content pr-2">
             {children}
           </main>
         </main>
