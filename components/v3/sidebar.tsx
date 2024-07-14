@@ -40,7 +40,7 @@ export default function Sidebar() {
     <div className="relative w-fit" ref={refOutside}>
       <CloseOpen isOpen={isOpen} setIsOpen={setIsOpen} />
       <div
-        className={cn(styles.sidebarWithOpenClose, {
+        className={cn(`${styles.sidebarWithOpenClose} !h-[calc(100vh-25px)] rounded-lg` , {
           [styles.sidebarWithOpenCloseActive]: !isOpen,
         })}
       >
