@@ -1,0 +1,7 @@
+.container {
+  @apply text-base font-semibold rounded-lg px-4 py-2;
+}
+
+.default {
+  @apply border border-l-4 border-b-4 border-light-300 text-light-300 hover:scale-105 transition-all duration-300;
+}

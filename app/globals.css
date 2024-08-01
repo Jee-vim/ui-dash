@@ -45,6 +45,18 @@
 }
 
 @layer utilities {
+  .text-40 {
+    @apply text-2xl md:text-3xl xl:text-4xl font-bold;
+  }
+
+  .text-28 {
+    @apply text-[20px] md:text-[28px];
+  }
+
+  .text-20 {
+    @apply text-sm md:text-[20px];
+  }
+
   .btn-global {
     @apply transition-colors flex items-center justify-center gap-2 font-medium duration-200 min-h-[38px] sm:h-9 rounded-lg py-1 px-4 md:px-5 text-sm;
   }
