@@ -1,5 +1,6 @@
 import Sidebar from "@/components/shared/Sidebar";
 import type { Metadata } from "next";
+import styles from "@/styles/component/layout.module.css";
 
 export const metadata: Metadata = {
   title: "Dashboard Layout V1",
@@ -14,11 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="main-wrapper">
+        <main className={styles.main_wrapper}>
           <Sidebar />
-          <main className="main-content pr-2">
-            {children}
-          </main>
+          <main className={`${styles.main_content} pr-2`}>{children}</main>
         </main>
       </body>
     </html>

@@ -1,0 +1,24 @@
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.main_wrapper {
+  @apply flex flex-row gap-2 bg-dark-100;
+}
+
+.main_navbar {
+  @apply min-h-[var(--h-navbar)] min-w-full bg-dark-500 p-3 flex items-center justify-between;
+}
+
+.main_content_with_navbar {
+  @apply w-full bg-dark-100 h-[calc(100vh-var(--h-navbar))] overflow-y-auto no-scrollbar py-2;
+}
+
+.main_content {
+  @apply w-full bg-dark-100 h-dvh overflow-y-auto no-scrollbar py-2;
+}

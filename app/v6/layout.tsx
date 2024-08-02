@@ -1,5 +1,8 @@
+import Navbar from "@/components/shared/Navbar";
 import Sidebar from "@/components/shared/Sidebar";
 import type { Metadata } from "next";
+import styles from "@/styles/component/layout.module.css";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Dashboard Layout V6",
@@ -14,11 +17,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <main className="main-wrapper">
-          <Sidebar />
-          <main className="main-content">{children}</main>
-          <Sidebar />
-        </main>
+        <div className="overflow-hidden h-dvh">
+          <Navbar />
+          <main
+            className={cn(
+              "h-[calc(100vh-var(--h-navbar))]",
+              styles.main_wrapper,
+            )}
+          >
+            <Sidebar height="h-[calc(100vh-var(--h-navbar)]" />
+            <main className={styles.main_content_with_navbar}>{children}</main>
+            <Sidebar height="h-[calc(100vh-var(--h-navbar)]" />
+          </main>
+        </div>
       </body>
     </html>
   );
