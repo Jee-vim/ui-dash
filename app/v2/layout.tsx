@@ -1,5 +1,5 @@
-import Navbar from "@/components/v2/navbar";
-import Sidebar from "@/components/v2/sidebar";
+import Navbar from "@/components/shared/Navbar";
+import Sidebar from "@/components/shared/Sidebar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

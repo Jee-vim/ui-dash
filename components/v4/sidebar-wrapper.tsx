@@ -1,8 +1,9 @@
 "use client";
-
 import { useState } from "react";
+
 import Sidebar from "./sidebar";
-import Navbar from "./navbar";
+import Navbar from "@/components/shared/Navbar";
+import CloseOpen from "./close-open";
 
 export default function SidebarWrapper({
   children,
@@ -15,7 +16,10 @@ export default function SidebarWrapper({
     <main className="main-wrapper">
       <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       <div className="w-full pr-2">
-        <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
+        <Navbar>
+          <CloseOpen isOpen={isOpen} setIsOpen={setIsOpen} />
+        </Navbar>
+
         <div className="main-content-with-navbar">{children}</div>
       </div>
     </main>
