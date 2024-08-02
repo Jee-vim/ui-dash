@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Mono, Inter } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${mono.variable} ${inter.variable}`}>{children}</body>
+      <body className={cn("animate-fade-in", mono.variable, inter.variable)}>
+        {children}
+      </body>
     </html>
   );
 }
