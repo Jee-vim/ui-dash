@@ -4,7 +4,11 @@ import { useWindowSize } from "@/hooks";
 import { cn } from "@/lib/utils";
 import styles from "@/styles/component/sidebar.module.css";
 
-export default function Sidebar({ isOpen, setIsOpen }: ISidebar) {
+export default function SidebarWithOpenClose({
+  isOpen,
+  setIsOpen,
+  className,
+}: ISidebar) {
   const { width } = useWindowSize();
   const isMobile = width <= 768;
   const refOutside = useRef<HTMLDivElement>(null);
@@ -34,7 +38,7 @@ export default function Sidebar({ isOpen, setIsOpen }: ISidebar) {
   }, [isMobile, isOpen]);
 
   return (
-    <div className="relative w-fit" ref={refOutside}>
+    <div className={cn("relative w-fit", className)} ref={refOutside}>
       <div
         className={cn(styles.sidebarWithOpenClose, {
           [styles.sidebarWithOpenCloseActive]: !isOpen,
