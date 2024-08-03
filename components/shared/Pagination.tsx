@@ -1,8 +1,8 @@
 "use client";
-
-import { getPagination } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+import { getPagination } from "@/lib/utils";
 
 export default function Pagination() {
   const path = usePathname();
@@ -10,7 +10,7 @@ export default function Pagination() {
   return (
     <div className="w-full flex items-center justify-between mt-2">
       <Page title={prev?.title} href={prev?.href} action={"Prev"} />
-      <Page title={next?.title} href={prev?.href} action={"Next"} />
+      <Page title={next?.title} href={next?.href} action={"Next"} />
     </div>
   );
 }
@@ -25,7 +25,7 @@ export const Page = ({
   action?: any;
 }) => {
   return (
-    <Link href={href ? href : "/"} className="rounded-lg p-2 bg-dark-300 w-40">
+    <Link href={href ? href : "/"} className="rounded-lg p-2 bg-dark-300 w-full max-w-40">
       <p className="text-sm text-dark-800">{action}</p>
       <p className="font-bold capitalize">layout {title}</p>
     </Link>
