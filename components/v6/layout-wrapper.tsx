@@ -5,6 +5,7 @@ import styles from "@/styles/component/layout.module.css";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 import CloseOpen from "../v3/close-open";
+import { useWindowSize } from "@/hooks";
 
 export default function LayoutWrapper({
   children,
@@ -12,6 +13,8 @@ export default function LayoutWrapper({
   children: React.ReactNode;
 }) {
   const [isOpen, setIsOpen] = useState(false);
+  const { width } = useWindowSize();
+  const IS_LARGE = width > 1024;
 
   return (
     <div className="overflow-hidden h-dvh">
@@ -31,9 +34,11 @@ export default function LayoutWrapper({
         )}
       >
         <Sidebar
-          className={cn(`absolute lg:block`, {
-            "left-0  !min-w-[200px] !h-[calc(100vh-var(--h-navbar))]": isOpen,
-            "left-[-280px]": !isOpen,
+          className={cn(`hidden absolute lg:block`, {
+            "left-0 !min-w-[200px] !h-[calc(100vh-var(--h-navbar))]": isOpen,
+            "left-[-280px]": !isOpen && !IS_LARGE,
+            "md:!w-[240px] lg:!min-w-[280px] left-0 !relative !h-[calc(100vh-var(--h-navbar))]":
+              IS_LARGE,
           })}
           height="h-[calc(100vh-var(--h-navbar)]"
         />
