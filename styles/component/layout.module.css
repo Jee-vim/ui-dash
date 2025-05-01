@@ -8,7 +8,7 @@
 }
 
 .main_wrapper {
-  @apply flex flex-row gap-2 bg-dark-100;
+  @apply flex flex-row bg-dark-100;
 }
 
 .main_navbar {
@@ -20,5 +20,5 @@
 }
 
 .main_content {
-  @apply w-full bg-dark-100 h-dvh overflow-y-auto no-scrollbar py-2;
+  @apply w-full bg-dark-100 h-dvh overflow-y-auto no-scrollbar p-2;
 }

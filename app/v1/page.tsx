@@ -1,5 +1,5 @@
-import Content from "@/components/shared/Content";
-import Pagination from "@/components/shared/Pagination";
+import Content from "@/components/shared/content";
+import Pagination from "@/components/shared/pagination";
 
 export default function Page() {
   return (

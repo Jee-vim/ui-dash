@@ -1,4 +1,4 @@
-import CButton from "@/components/shared/CButton";
+import CButton from "@/components/shared/c-button";
 
 export default function Page() {
   return (

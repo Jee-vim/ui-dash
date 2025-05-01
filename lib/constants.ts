@@ -23,4 +23,8 @@ export const LIST_LAYOUT = [
     title: "V6",
     href: "/v6",
   },
+  {
+    title: "V7 Beta",
+    href: "/v7-beta",
+  },
 ];

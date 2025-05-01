@@ -1,4 +1,4 @@
-import { LIST_LAYOUT } from "@/constants/constants";
+import { LIST_LAYOUT } from "./constants";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
