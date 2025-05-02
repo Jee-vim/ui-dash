@@ -10,6 +10,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Layout.Root isNavbar>
+          <Layout.Sidebar></Layout.Sidebar>
           <Layout.Content>
             <Layout.Navbar>
               <Layout.Trigger />

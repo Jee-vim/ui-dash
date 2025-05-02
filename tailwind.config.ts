@@ -1,4 +1,3 @@
-import { on } from "events";
 import type { Config } from "tailwindcss";
 
 const config = {
@@ -10,10 +9,6 @@ const config = {
     "./src/**/*.{ts,tsx}",
   ],
   theme: {
-    fontFamily: {
-      mono: ["var(--font-mono)", "monospace"],
-      inter: ["var(--font-inter)", "sans-serif"],
-    },
     extend: {
       colors: {
         primary: "#24b47e",

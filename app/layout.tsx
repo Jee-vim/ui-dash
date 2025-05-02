@@ -1,18 +1,6 @@
 import type { Metadata } from "next";
-import { DM_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--inter-font",
-});
-
-const mono = DM_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--mono-font",
-});
 
 export const metadata: Metadata = {
   title: "Dashboard Layout ",
@@ -26,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("animate-fade-in", mono.variable, inter.variable)}>
+      <body className={cn("animate-fade-in" )}>
         {children}
       </body>
     </html>

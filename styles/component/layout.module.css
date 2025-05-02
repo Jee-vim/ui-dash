@@ -15,10 +15,6 @@
   @apply min-h-[var(--h-navbar)] min-w-full bg-dark-500 p-3 flex items-center justify-between;
 }
 
-.main_content_with_navbar {
-  @apply w-full bg-dark-100 h-[calc(100vh-var(--h-navbar))] overflow-y-auto no-scrollbar py-2;
-}
-
-.main_content {
-  @apply w-full bg-dark-100 h-dvh overflow-y-auto no-scrollbar p-2;
+.content {
+  @apply w-full bg-dark-100 overflow-y-auto no-scrollbar p-2;
 }

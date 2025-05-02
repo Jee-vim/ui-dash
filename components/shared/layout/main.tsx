@@ -49,14 +49,16 @@ const Content = ({
   return (
     <div
       className={cn(className, {
-        [styles.main_content]: !isNavbar,
-        "w-full h-dvh overflow-hidden p-2 grid gap-[8px]": isNavbar,
+        [styles.content]: !isNavbar,
+        "h-dvh": !isNavbar,
+        "w-full h-dvh overflow-hidden": isNavbar,
       })}
     >
       {children}
     </div>
   );
 };
+
 const ContentWithNavbar = ({
   children,
   className,
@@ -64,12 +66,11 @@ const ContentWithNavbar = ({
   children: React.ReactNode;
   className?: string;
 }) => {
-  const { isNavbar } = useLayout();
   return (
     <div
       className={cn(
-        styles.main_content,
-        isNavbar && "!h-[calc(100vh-var(--h-navbar))] !p-0 !pb-7",
+        "h-[calc(100vh-var(--h-navbar))]",
+        styles.content,
         className,
       )}
     >
@@ -82,18 +83,29 @@ const Sidebar = ({
   className,
   height,
   children,
+  isFullHide = false,
 }: {
   className?: string;
   height?: string;
   children?: React.ReactNode;
+  isFullHide?: boolean;
 }) => {
   const { on } = useLayout();
   return (
     <div
       className={cn(
-        "min-w-[var(--w-sidebar)] md:w-[240px] lg:min-w-[280px] transition-all bg-dark-500 p-3",
+        "min-w-[var(--w-sidebar)] md:w-[240px] lg:min-w-[280px] transition-all duration-300 bg-dark-500 p-3",
         height ? height : "h-dvh ",
-        on && " md:w-[var(--h-navbar)] lg:min-w-[var(--h-navbar)]",
+        on &&
+        !isFullHide &&
+        "md:w-[var(--h-navbar)] lg:min-w-[var(--h-navbar)]",
+        !on &&
+        isFullHide && [
+          "absolute -translate-x-full left-0 top-0 z-[-1]",
+          "md:translate-x-0 md:relative md:z-auto",
+          "md:w-0 md:min-w-0 md:opacity-100",
+          "opacity-0 overflow-hidden p-0",
+        ],
         className,
       )}
     >
