@@ -94,11 +94,11 @@ const Sidebar = ({
   return (
     <div
       className={cn(
-        "min-w-[var(--w-sidebar)] md:w-[240px] lg:min-w-[280px] transition-all duration-300 bg-dark-500 p-3",
+        "min-w-(--w-sidebar) md:w-[240px] lg:min-w-[280px] transition-all duration-300 bg-dark-500 p-3",
         height ? height : "h-dvh ",
         on &&
         !isFullHide &&
-        "md:w-[var(--h-navbar)] lg:min-w-[var(--h-navbar)]",
+        "md:w-(--h-navbar) lg:min-w-(--h-navbar)",
         !on &&
         isFullHide && [
           "absolute -translate-x-full left-0 top-0 z-[-1]",

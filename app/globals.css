@@ -1,38 +1,133 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --w-sidebar: 80px;
-  --h-navbar: 75px;
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-primary: #24b47e;
+  --color-primary_dark: #00997b;
+  --color-danger: #eb5757;
+
+  --color-light-100: #f9f9f9;
+  --color-light-200: #f2f2f2;
+  --color-light-300: #ededed;
+  --color-light-400: #e6e6e6;
+  --color-light-500: #dadada;
+  --color-light-600: #d2d2d2;
+  --color-light-800: #bcbcbc;
+  --color-light-900: #a8a8a8;
+  --color-light: #ffffff;
+  --color-light-base: #646464;
+
+  --color-dark-100: #181818;
+  --color-dark-200: #212121;
+  --color-dark-300: #2a2a2a;
+  --color-dark-350: #2b2b2b;
+  --color-dark-400: #323232;
+  --color-dark-500: #3e3e3e;
+  --color-dark-600: #4a4a4a;
+  --color-dark-700: #6e6e6e;
+  --color-dark-800: #808080;
+  --color-dark-900: #999999;
+  --color-dark: #000000;
+  --color-dark-base: #a5a5a5;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-in: fade-in 0.8s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: fit-content;
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: fit-content;
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+@utility text-40 {
+  @apply text-2xl md:text-3xl xl:text-4xl font-bold;
 }
 
-.custom-scrollbar::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
-  border-radius: 2px;
+@utility text-28 {
+  @apply text-[20px] md:text-[28px];
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
-  @apply bg-dark-500;
+@utility text-20 {
+  @apply text-sm md:text-[20px];
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  @apply bg-primary;
-  border-radius: 50px;
+@utility btn-global {
+  @apply transition-colors flex items-center justify-center gap-2 font-medium duration-200 min-h-[38px] sm:h-9 rounded-lg py-1 px-4 md:px-5 text-sm;
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary;
+@layer utilities {
+  :root {
+    --w-sidebar: 80px;
+    --h-navbar: 75px;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    border-radius: 2px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-dark-500;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-primary;
+    border-radius: 50px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
 }
 
 @layer base {
@@ -41,24 +136,6 @@
   }
 
   button {
-    @apply outline-none focus:outline-none;
-  }
-}
-
-@layer utilities {
-  .text-40 {
-    @apply text-2xl md:text-3xl xl:text-4xl font-bold;
-  }
-
-  .text-28 {
-    @apply text-[20px] md:text-[28px];
-  }
-
-  .text-20 {
-    @apply text-sm md:text-[20px];
-  }
-
-  .btn-global {
-    @apply transition-colors flex items-center justify-center gap-2 font-medium duration-200 min-h-[38px] sm:h-9 rounded-lg py-1 px-4 md:px-5 text-sm;
+    @apply outline-hidden focus:outline-hidden;
   }
 }

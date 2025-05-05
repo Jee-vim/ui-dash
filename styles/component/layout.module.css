@@ -1,20 +1,14 @@
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
+@reference "tailwindcss";
+@reference "../../app/globals.css";
 
 .main_wrapper {
   @apply flex flex-row bg-dark-100;
 }
 
 .main_navbar {
-  @apply min-h-[var(--h-navbar)] min-w-full bg-dark-500 p-3 flex items-center justify-between;
+  @apply min-h-(--h-navbar) min-w-full bg-dark-500 p-3 flex items-center justify-between;
 }
 
 .content {
-  @apply w-full bg-dark-100 overflow-y-auto no-scrollbar p-2;
+  @apply w-full bg-dark-100 overflow-y-auto p-2;
 }
